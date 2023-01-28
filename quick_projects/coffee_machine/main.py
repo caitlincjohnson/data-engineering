@@ -1,3 +1,5 @@
+"""This module contains the Coffee Machine exercise."""
+
 MENU = {
     "espresso": {
         "ingredients": {
