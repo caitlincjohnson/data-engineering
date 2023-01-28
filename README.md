@@ -1,5 +1,5 @@
-# data-engineering
-Catch-all repository for code snippets, projects, and all things relating to data engineering.
+# Data Engineering
+This is my catch-all repository for code snippets, projects, and all things relating to data engineering.
 
 This repository leverages pre-commit as an attempt to improve readabilty of the code. To get started with this, after cloning the respository, execute the following command:
 
