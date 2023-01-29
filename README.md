@@ -4,6 +4,7 @@ This is my catch-all repository for code snippets, projects, and all things rela
 Main concepts included in this repository include side projects for the following:
 - Apache Airflow
 - Apache Spark
+- Intermediate to Advanced Python exercises
 
 ## Installation/Usage
 
