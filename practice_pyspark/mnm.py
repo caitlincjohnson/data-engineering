@@ -1,5 +1,10 @@
+import logging
+
 import pandas as pd
 from pyspark.sql import SparkSession
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 def main():
@@ -13,7 +18,12 @@ def main():
     url_github = "https://raw.githubusercontent.com/databricks/LearningSparkV2/master/chapter2/py/src/data/mnm_dataset.csv"
     pd_df = pd.read_csv(url_github)
 
-    spark_df = spark.createDataFrame(pd_df)
+    schema = "State STRING, Color STRING, Count INT"
+
+    spark_df = spark.createDataFrame(pd_df, schema)
+
+    # Check the schema
+    logging.info(f"Schema: {spark_df.schema}")
 
     # Select from the dataframe and groupby the State and Color
     # Sum Count of M&Ms and order by it
@@ -27,7 +37,7 @@ def main():
 
     # Show the results (which is an "action")
     count_mnm_df.show(n=60, truncate=False)
-    print(f"Total Rows = {count_mnm_df.count()}")
+    logging.info(f"Total Rows = {count_mnm_df.count()}")
 
     # Filter for only California ("CA")
     # Lazy evaluation
