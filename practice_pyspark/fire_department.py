@@ -14,7 +14,7 @@ def main():
     """Main script."""
 
     # Build a SparkSession
-    spark = SparkSession.builder.appName("PythonMnMCount").getOrCreate()
+    spark = SparkSession.builder.appName("FireDepartment").getOrCreate()
 
     # Get the Fire Department data set via Github
     url_github = "https://raw.githubusercontent.com/databricks/LearningSparkV2/master/chapter3/data/sf-fire-calls.csv"
