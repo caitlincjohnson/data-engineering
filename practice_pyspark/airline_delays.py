@@ -51,24 +51,6 @@ def main():
     )
     delays_filtered.createOrReplaceTempView("delays_filtered")
 
-    # Practice an inner join
-    delays_filtered.join(
-        airport_code_df, airport_code_df.IATA == delays_filtered.origin
-    ).select("City", "State", "date", "delay", "distance", "destination").show(10)
-
-    spark.sql(
-        """
-    CREATE TABLE departure_delay_window AS
-    SELECT origin, destination, SUM(delay) AS total_delays
-    FROM delays
-    WHERE origin IN ('SEA', 'SFO', 'JFK')
-    AND destination in ('SEA', 'SFO', 'JFK', 'DEN', 'ORD', 'LAX', 'ATL')
-    GROUP BY origin, destination;
-    """
-    )
-
-    spark.sql("""SELECT * FROM departure_delays_window LIMIT 10;""")
-
 
 if __name__ == "__main__":
     main()
