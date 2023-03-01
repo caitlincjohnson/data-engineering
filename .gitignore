@@ -178,3 +178,12 @@ poetry.toml
 # Ignore all local history of files
 .history
 .ionide
+
+
+### Custom
+practice_python/dsa
+
+# Terraform
+*.terraform*
+*.tfstate
+*.tfstate.*
